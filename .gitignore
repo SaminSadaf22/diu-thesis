@@ -1,0 +1,28 @@
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.toc
+*.gz
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.xdv
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Overleaf project cache
+__latexindent_temp*
+
+# VSCode
+.vscode/
