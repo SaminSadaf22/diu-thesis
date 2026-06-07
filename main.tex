@@ -1,0 +1,151 @@
+% DIU Thesis Overleaf-ready template
+% Compile with XeLaTeX + Biber (recommended)
+\documentclass[12pt,a4paper]{report}
+
+% Use XeLaTeX for modern font handling
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{tocbibind}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% Page geometry
+\geometry{left=35mm,right=25mm,top=30mm,bottom=30mm}
+\setstretch{1.5}
+
+% Fonts (XeLaTeX)
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{TeX Gyre Termes} % change to preferred serif
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
+
+% Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Title data (customize)
+\newcommand{\thesistitle}{Your Thesis Title Here}
+\newcommand{\authorname}{Your Name}
+\newcommand{\supervisorname}{Supervisor Name}
+\newcommand{\department}{Department of Software Engineering}
+\newcommand{\university}{Daffodil International University}
+\newcommand{\degree}{Bachelor of Science}
+\newcommand{\sessionyear}{October 2024}
+
+% Title page
+\begin{document}
+\pagenumbering{gobble}
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  % logo placeholder: put logo.png in project root (optional)
+  \IfFileExists{logo.png}{\includegraphics[width=0.22\textwidth]{logo.png}\\[1cm]}{}
+  {\LARGE \textbf{\university}}\\[1.5cm]
+  {\Huge \textbf{\thesistitle}}\\[1.5cm]
+  {\Large \authorname}\\[0.5cm]
+  Thesis submitted in fulfillment of the requirements\\
+  for the award of the degree of\\[0.5cm]
+  {\Large \degree}\\[0.5cm]
+  {\large \department}\\[0.5cm]
+  {\large \sessionyear}\\[2cm]
+  \vfill
+\end{titlepage}
+
+% Declaration and copyright page
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+  {\Large \textbf{Declaration of Thesis and Copyright}}\\[1cm]
+\end{center}
+\vspace{6mm}
+I declare that this thesis is my original work and has not been submitted for any other degree.\\[6mm]
+\noindent Certified by:\\[2cm]
+\begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
+  (Student's Signature) & (Supervisor's Signature) \\
+  Name: \authorname & Name: \supervisorname \\
+  Date: & Date: \\
+\end{tabular}
+
+\clearpage
+
+% Supervisor's declaration (separate page)
+\thispagestyle{empty}
+\vspace*{3cm}
+\begin{center}
+  {\Large \textbf{Supervisor's Declaration}}\\[1cm]
+\end{center}
+
+I/We hereby declare that I/We have checked this thesis in my/our opinion it is adequate in terms of scope and quality for the award of the degree.\\[6mm]
+
+\vfill
+\clearpage
+
+% Student's declaration
+\thispagestyle{empty}
+\vspace*{3cm}
+\begin{center}
+  {\Large \textbf{Student's Declaration}}\\[1cm]
+\end{center}
+
+I hereby declare that the work in this thesis is based on my original work except for quotations and citations which have been duly acknowledged.\\[6mm]
+
+\begin{tabular}{l l}
+Full Name: & \authorname \\
+ID Number: & 201344899 \\
+Date: & 12 October 2016 \\
+\end{tabular}
+
+\clearpage
+
+% Dedication / Acknowledgements / Abstract
+\pagenumbering{roman}
+\setcounter{page}{1}
+\chapter*{Acknowledgements}
+Write your acknowledgements here.
+
+\chapter*{Abstract}
+Write your abstract here (English).\\
+\textbf{Keywords:} thesis, template, DIU
+
+\chapter*{Résumé}
+(Optional) Bengali abstract or summary.
+
+\tableofcontents
+\listoffigures
+\listoftables
+\cleardoublepage
+
+% Main content
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{chapters/ch1_introduction.tex}
+\input{chapters/ch2_styles.tex}
+\input{chapters/ch3_methodology.tex}
+\input{chapters/ch4_results.tex}
+\input{chapters/ch5_conclusion.tex}
+
+% Bibliography
+\cleardoublepage
+\printbibliography[title={References}]
+
+% Appendices
+\appendix
+\input{chapters/appendix_a.tex}
+
+\end{document}
